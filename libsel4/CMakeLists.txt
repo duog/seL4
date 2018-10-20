@@ -145,3 +145,11 @@ target_include_directories(sel4 PUBLIC
     "${CMAKE_CURRENT_BINARY_DIR}/sel4_arch_include/${KernelSel4Arch}"
 )
 add_dependencies(sel4 sel4_gen)
+
+target_compile_options(sel4
+    PUBLIC "-Wno-missing-prototypes"
+    PUBLIC "-Wno-missing-declarations"
+    PUBLIC "-Wno-unused-value"
+    PUBLIC "-Wno-undef"
+    PUBLIC "-std=gnu99")
+

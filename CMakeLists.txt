@@ -409,3 +409,5 @@ target_include_directories(kernel.elf PRIVATE "${CMAKE_CURRENT_BINARY_DIR}/gener
 target_link_libraries(kernel.elf PRIVATE kernel_Config kernel_autoconf)
 set_property(TARGET kernel.elf APPEND_STRING PROPERTY LINK_FLAGS " -T ${linker_lds_path} ")
 add_dependencies(kernel.elf linker_ld_wrapper kernel_i_wrapper kernel_all_pp_wrapper circular_includes)
+
+add_subdirectory(libsel4)
